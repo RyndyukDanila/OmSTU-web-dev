@@ -1,0 +1,29 @@
+# Сайт – Клуб любителей собак
+
+## Требования
+
+### Страницы
+- Главная
+- Список пород
+- Общий список
+- Профиль владельца
+
+### Основные данные
+- Порода
+- Кличка
+- Пол
+- Возраст
+- Владелец
+
+### Database
+PET
+id, user_id, breed_id, name, age, gender
+
+BREED
+id, name, desc?
+
+OWNER
+user_id, pet_id
+
+USER
+id, email, login, password
