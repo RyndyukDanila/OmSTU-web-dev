@@ -11,7 +11,12 @@
 				<div class="get-started__block-text block-text">
 					<h1 class="block-text__title block-text__title_blue"><span>Питомец</span> бесценен.</h1>
 					<div class="block-text__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum illum ab similique aperiam adipisci, quo.</div>
-					<a href="<?php echo BASE_URL . "dog.php"; ?>" class="block-text__button button">Завести питомца</a>
+					<?php if (isset($_SESSION['id'])): ?>
+						<a href="<?php echo BASE_URL . "get-pet.php"; ?>" class="block-text__button button">Завести питомца</a>
+               <?php else: ?>
+               	<a href="<?php echo BASE_URL . "registration.php"; ?>" class="block-text__button button">Зарегистрироваться</a>
+               <?php endif; ?>
+					
 				</div>
 			</div>
 			<div class="get-started__image">
@@ -37,9 +42,6 @@
 					<div class="image-dog-breed__image">
 						<img src="static/img/dog-breed/blue-dog-breed.svg" alt="Картинка собаки в ветклинике">
 					</div>
-					<div class="image-dog-breed__item image-dog-breed__item_1"></div>
-					<div class="image-dog-breed__item image-dog-breed__item_2"></div>
-					<div class="image-dog-breed__item image-dog-breed__item_3"></div>
 				</div>
 			</div>
 			<div class="dog-breed__content">

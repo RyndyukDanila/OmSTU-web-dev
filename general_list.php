@@ -5,10 +5,10 @@
 ?>
 
 <main class="main">
-	<section class="get-started">
-		<div class="get-started__container">
-			<div class="get-started__content">
-				<div class="get-started__block-text block-text">
+	<section class="general-list">
+		<div class="general-list__container">
+			<div class="general-list__content">
+				<div class="general-list__block-text block-text">
 					<h1 class="block-text__title block-text__title_blue">Список пользователей:</h1>
 					<?php 
 					$stuff = selectAll('users');
@@ -18,8 +18,18 @@
 					?>
 				</div>
 			</div>
-			<div class="get-started__image">
-				<img src="static/img/get-started/blue-vec.svg" alt="Картинка собаки и ее владельца">
+
+			<div class="general-list__content">
+				<div class="general-list__block-text block-text">
+					<h1 class="block-text__title block-text__title_blue">Список собак:</h1>
+					<?php 
+					$stuff = selectAll('pets');
+					foreach ($stuff as $value) {
+						$breed = selectOne('breeds', ['id' => $value['breed_id']]);
+						echo '<div class="block-text__text"> Кличка: ' . $value['name'] . '<br>Порода: ' . $breed['name'] . '<br>Пол: ' . $value['gender'] . '<br>Возраст: ' . $value['age'] . '</div>';
+					}
+					?>
+				</div>
 			</div>
 		</div>
 	</section>

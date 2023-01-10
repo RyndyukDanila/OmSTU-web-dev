@@ -4,6 +4,10 @@
 	require_once("static/include/header.php");
 ?>
 
+<?php if (isset($_SESSION['id'])){
+	header('location: ' . BASE_URL . 'profile.php');
+}?>
+
 <main class="main">
 	<div id="registration">
 		<div class="registration-box">

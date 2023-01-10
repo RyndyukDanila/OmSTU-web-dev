@@ -5,7 +5,7 @@ include("db/db.php");
 $errMsg = '';
 
 function userAuth($user){
-    $_SESSION['id'] = $user['USER_ID'];
+    $_SESSION['id'] = $user['user_id'];
     $_SESSION['username'] = $user['username'];
     $_SESSION['email'] = $user['email'];
     $_SESSION['admin'] = $user['admin'];
@@ -20,13 +20,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn-reg'])){
     $email = trim($_POST['email']);
     $pass = trim($_POST['pass']);
     $passR = trim($_POST['pass-repeat']);
-
-    $post = [
-        'admin' => $admin,
-        'username' => $username,
-        'email' => $email,
-        'password' => $pass
-    ];
 
     if($username === '' || $email === '' || $pass === ''){
         $errMsg = "Не все поля заполнены!";
@@ -51,7 +44,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btn-reg'])){
                 'password' => $pass
             ];
             $id = insert('users', $post);
-            $user = selectOne('users', ['USER_ID' => $id] );
+            $user = selectOne('users', ['user_id' => $id] );
             userAuth($user);
         }
     }

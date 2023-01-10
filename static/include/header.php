@@ -27,15 +27,14 @@
                                     <a href="<?php echo BASE_URL . "general_list.php"; ?>" class="menu__link">ОБЩИЙ СПИСОК</a>
                                 </li>
                                 <?php if (isset($_SESSION['id'])): ?>
-                                    <li class="menu__item">
-                                        <a href="<?php echo BASE_URL . "profile.php"; ?>" class="menu__link">ПРОФИЛЬ</a>
-                                    </li>
+                                <li class="menu__item">
+                                    <a href="<?php echo BASE_URL . "profile.php"; ?>" class="menu__link">ПРОФИЛЬ</a>
+                                </li>
                                 <?php else: ?>    
-                                    <li class="menu__item">
-                                        <a href="<?php echo BASE_URL . "registration.php"; ?>" class="menu__link">ПРОФИЛЬ</a>
-                                    </li>
+                                <li class="menu__item">
+                                    <a href="<?php echo BASE_URL . "registration.php"; ?>" class="menu__link">ПРОФИЛЬ</a>
+                                </li>
                                 <?php endif; ?>
-                                
                             </ul>
                         </nav>
                     </div>
